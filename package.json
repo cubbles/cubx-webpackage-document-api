@@ -1,6 +1,6 @@
 {
   "name": "cubx-webpackage-document-api",
-  "version": "2.4.1",
+  "version": "3.0.0",
   "description": "API for a webpackage document (e.g. the validation functionality)",
   "author": "Judit Ross <judit.ross@incowia.com>",
   "contributors": [
