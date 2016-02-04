@@ -1,0 +1,116 @@
+{
+    "name": "my-webpackage",
+    "groupId": "org.example",
+    "version": "0.2.0",
+    "modelVersion": "8.0.0",
+    "docType": "webpackage",
+    "description": "Description of this webpackage",
+    "author": {
+        "name": "John Doe",
+        "email": "john.doe@gmail.com",
+        "url": "http://john.doe.com/"
+    },
+    "license": "MIT",
+    "homepage": "http://project.home.com",
+    "keywords": [
+        "cubx",
+        "template"
+    ],
+    "man": [
+        "http://project.com/man",
+        "http://project.com/man2"
+    ],
+    "runnables": [
+        {
+            "name": "readme",
+            "path": "/doc/readme.html",
+            "description": "Read this ..."
+        }
+    ],
+    "artifacts": {
+        "compoundComponents": [
+            {
+                "artifactId": "my-compound",
+                "description": "This compound demonstrates ...",
+                "endpoints": [
+                    {
+                        "endpointId": "main",
+                        "resources": [
+                            "import.html"
+                        ],
+                        "dependencies": [
+                            "d3-charts-lib-missing-artifact@1.0",
+                            "com.hm.demos.aviator@1.0/component1/htmlimport",
+                            "com.hm.demos.aviator@1.0/component2/htmlimport"
+                        ]
+                    }
+                ],
+                "slots": [
+                    {
+                        "slotId": "slot1",
+                        "type": "number",
+                        "direction": [
+                            "input"
+                        ],
+                        "description": "This slot ..."
+                    }
+                ],
+                "members": [
+                    {
+                        "componentId": "com.incowia.emob.generic-correlator@1.0.0-SNAPSHOT/generic",
+                        "displayName": "Korrelation - Fahrzeuge pro Ladestation",
+                        "description": ">>>>>>>>>>>>> Missing memberId <<<<<<<<<<<<<<<<<<"
+                    },
+                    {
+                        "memberId": "vehiclePerSharingstationCorrelator",
+                        "displayName": "Korrelation - Fahrzeuge pro Carsharing-Station",
+                        "description": ">>>>>>>>>>>>> Missing componentId <<<<<<<<<<<<<<<<<<"
+                    },
+                    {
+                        "memberId": "stationView",
+                        "componentId": "com.incowia.emob.view@1.0.0-SNAPSHOT/station-view",
+                        "displayName": "Korrelation - Fahrzeuge pro Carsharing-Station"
+                    }
+                ],
+                "connections": [
+                    {
+                        "connectionId": "chargeStationCorrelator-out1",
+                        "source": {
+                            "memberId": "vehiclesPerChargingstationCorrelator",
+                            "slot": "correlationValueOut"
+                        },
+                        "destination": {
+                            "memberIdRef": "stationView",
+                            "slot": "correlationValuesIn"
+                        },
+                        "description": ">>>>>>>>>>>>> InvalidAttribute memberId <<<<<<<<<<<<<<<<<<"
+                    },
+                    {
+                        "connectionId": "shareStationCorrelator-out1",
+                        "source": {
+                            "memberIdRef": "vehiclePerSharingstationCorrelator",
+                            "slot": "correlationValueOut"
+                        },
+                        "destination": {
+                            "memberIdRef": "stationView",
+                            "slot": "correlationValuesIn"
+                        },
+                        "description": "sharing station correlator view adapter"
+                    }
+                ],
+                "inits": [
+                    {
+                        "memberIdRef": "vehiclesPerChargingstationCorrelator",
+                        "slot": "correlationValueIn",
+                        "value": "12"
+                    },
+                    {
+                        "memberIdRef": "vehiclesPerChargingstationCorrelator",
+                        "slot": "unit",
+                        "value": "sq km"
+                    }
+                ]
+            }
+        ]
+    }
+}

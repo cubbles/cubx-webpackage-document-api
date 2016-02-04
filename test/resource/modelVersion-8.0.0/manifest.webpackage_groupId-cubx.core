@@ -1,0 +1,30 @@
+{
+    "name": "my-webpackage",
+    "groupId": "cubx.core",
+    "version": "0.2.0",
+    "modelVersion": "8.0.0",
+    "docType": "webpackage",
+    "author": {
+        "name": "John Doe",
+        "email": "john.doe@incowia.com"
+    },
+    "license": "MIT",
+    "homepage": "http://project.home.com",
+    "keywords": [
+        "cubx",
+        "template"
+    ],
+    "man": [
+        "http://project.com/man",
+        "http://project.com/man2"
+    ],
+    "runnables": [
+        {
+            "name": "readme",
+            "path": "/doc/readme.html",
+            "description": "Read this ..."
+        }
+    ],
+    "artifacts": {
+    }
+}

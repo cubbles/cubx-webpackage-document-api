@@ -1,0 +1,33 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": [
+      "./lib"
+    ],
+    "includePattern": ".+\\.js(doc)?$"
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true,
+    "outputSourceFiles": true,
+    "systemName": "cubx-webpackage-document-api",
+    "footer": "Judit Ross",
+    "copyright": "Cubbles © 2016",
+    "navType": "vertical",
+    "theme": "cerulean",
+    "linenums": true,
+    "collapseSymbols": true,
+    "inverseNav": true
+  },
+  "opts": {
+    "template": "node_modules\\ink-docstrap\\template",
+    "encoding": "utf8",
+    "destination": "docs/js",
+    "recurse": true,
+    "private": false,
+    "explain": false
+  }
+}

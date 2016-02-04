@@ -1,0 +1,38 @@
+{
+    "name": "my-webpackage",
+    "groupId": "org.example",
+    "version": "0.2.0",
+    "modelVersion": "800.0.0",
+    "docType": "webpackage",
+    "description": "Description of this webpackage",
+    "authors": [
+        {
+            "name": "John Doe",
+            "email": "john.doe@gmail.com",
+            "url": "http://john.doe.com/"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "http://project.home.com",
+    "keywords": [
+        "cubx",
+        "template"
+    ],
+    "man": [
+        "http://project.com/man",
+        "http://project.com/man2"
+    ],
+    "runnables": [
+        {
+            "name": "readme",
+            "path": "/doc/readme.html",
+            "description": "Read this ..."
+        }
+    ],
+    "artifacts": {
+        "app-block": [],
+        "compound-block": [],
+        "elementary-block": [],
+        "util-block": []
+    }
+}

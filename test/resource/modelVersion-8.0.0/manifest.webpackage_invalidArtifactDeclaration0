@@ -1,0 +1,94 @@
+{
+    "name": "my-webpackage",
+    "groupId": "org.example",
+    "version": "0.2.0",
+    "modelVersion": "8.0.0",
+    "docType": "webpackage",
+    "description": "Description of this webpackage",
+    "author": {
+        "name": "John Doe",
+        "email": "john.doe@example.org",
+        "url": "http://john.doe.com/"
+    },
+    "license": "MIT",
+    "homepage": "http://project.home.com",
+    "keywords": [
+        "cubx",
+        "template"
+    ],
+    "man": [
+        "http://project.com/man",
+        "http://project.com/man2"
+    ],
+    "runnables": [
+        {
+            "name": "readme",
+            "path": "/doc/readme.html",
+            "description": "Read this ..."
+        }
+    ],
+    "artifacts": {
+        "apps": [
+            {
+                "artifactId": "duplicated-appid"
+            },
+            {
+                "artifactId": "duplicated-appid"
+            }
+        ],
+        "compoundComponents": [
+            {
+                "artifactId": "duplicated-compound-id",
+                "endpoints": [
+                    {
+                        "endpointId": "main",
+                        "resources": [
+                            "import.html"
+                        ]
+                    }
+                ],
+                "connections": [],
+                "members": []
+            },
+            {
+                "artifactId": "duplicated-compound-id",
+                "endpoints": [
+                    {
+                        "endpointId": "main",
+                        "resources": [
+                            "import.html"
+                        ]
+                    }
+                ],
+                "connections": [],
+                "members": []
+            }
+        ],
+        "elementaryComponents": [
+            {
+                "artifactId": "duplicated-id",
+                "endpoints": [
+                    {
+                        "endpointId": "main",
+                        "resources": [
+                            "import.html"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "utilities": [
+            {
+                "artifactId": "duplicated-id",
+                "endpoints": [
+                    {
+                        "endpointId": "main",
+                        "resources": [
+                            "import.html"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

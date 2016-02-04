@@ -1,0 +1,15 @@
+{
+  "name": "my@webpackage",
+  "groupId": "org.Example",
+  "version": "0.2.0-alpha",
+  "modelVersion": "8.0.0",
+  "docType": "invalidValue",
+  "author": {
+    "name": "John Doe",
+    "email": "john.doe@example.-org",
+    "url": "ftp://example.com"
+  },
+  "license": "MIT",
+  "artifacts": {
+  }
+}

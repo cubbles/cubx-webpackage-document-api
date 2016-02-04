@@ -1,0 +1,76 @@
+{
+    "name": "my-webpackage",
+    "groupId": "org.example",
+    "version": "0.2.0",
+    "modelVersion": "8.0.0",
+    "docType": "webpackage",
+    "author": {
+        "name": "John Doe",
+        "email": "john.doe@example.org"
+    },
+    "license": "MIT",
+    "homepage": "http://project.home.com",
+    "keywords": [
+        "cubx",
+        "template"
+    ],
+    "man": [
+        "http://project.com/man",
+        "http://project.com/man2"
+    ],
+    "runnables": [
+        {
+            "name": "readme",
+            "path": "/doc/readme.html",
+            "description": "Read this ..."
+        }
+    ],
+    "artifacts": {
+        "elementaryComponents": [
+            {
+                "artifactId": "my-elementary",
+                "description": "This elementary demonstrates ...",
+                "endpoints": [
+                    {
+                        "endpointId": "main",
+                        "resources": [
+                            "import.html"
+                        ],
+                        "dependencies": [
+                            "d3-charts-lib@1.0/bar-chart/main",
+                            "com.hm.demos.aviator@1.0/component1/htmlimport",
+                            "com.hm.demos.aviator@1.0/component2/htmlimport"
+                        ]
+                    }
+                ],
+                "slots": [
+                    {
+                        "slotId": "duplicated-slot-id",
+                        "type": "number",
+                        "direction": [
+                            "input"
+                        ],
+                        "description": "This slot ..."
+                    },
+                    {
+                        "slotId": "duplicated-slot-id",
+                        "type": "number",
+                        "direction": [
+                            "input"
+                        ],
+                        "description": "This slot ..."
+                    },
+                    {
+                        "slotId": "slot1",
+                        "type": "number",
+                        "direction": [
+                            "input"
+                        ],
+                        "description": "This slot ..."
+                    }
+                ]
+            }
+        ]
+    }
+}
+
