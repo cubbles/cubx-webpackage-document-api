@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cubbles docs</title>
+    <script>
+        function getParameterByName (name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+            if (!results) return null;
+            if (!results[ 2 ]) return '';
+            return decodeURIComponent(results[ 2 ].replace(/\+/g, " "));
+        }
+    </script>
+    <script>
+        function addWidget (schemaUrl) {
+            var scripts = document.getElementsByTagName('script');
+            var script = scripts[ scripts.length - 1 ];
+
+            document.write("<iframe id='" + schemaUrl +
+                    "' style='padding: 0; border: 0; width:100%; background: transparent' src='vendor/docson/index.html#" + schemaUrl + "'></iframe>");
+            function receiveMessage (event) {
+                console.log("<", event)
+                if (event.data.id && event.data.id == "docson") {
+                    var frame = document.getElementById(event.data.url);
+                    if (event.data.action == "resized") {
+                        frame.height = event.data.height + 18;
+                    }
+                    if (event.data.action == "ready") {
+                        console.log(frame.parentNode)
+                        frame.contentWindow.postMessage({
+                            id: "docson",
+                            font: window.getComputedStyle(frame.parentNode).fontFamily
+                        }, "*");
+                    }
+                }
+            }
+            window.addEventListener("message", receiveMessage, false);
+        }
+    </script>
+</head>
+<body>
+<h1>JSONSchema for manifest.webpackage</h1>
+<script>
+    var schemaUrl = "https://raw.githubusercontent.com/cubbles/cubx-webpackage-document-api/" + getParameterByName('schemaPath');
+    addWidget(schemaUrl);
+</script>
+</body>
+</html>
