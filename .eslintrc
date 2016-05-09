@@ -4,5 +4,11 @@
   // * 'standard' means, we override configs from an npm-package named 'standard'
   "extends": [
     "standard"
-  ]
+  ],
+  "rules": {
+    "semi": [
+      2,
+      "always"
+    ]
+  }
 }

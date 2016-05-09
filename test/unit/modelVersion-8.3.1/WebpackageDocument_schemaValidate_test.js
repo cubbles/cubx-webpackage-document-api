@@ -1,5 +1,5 @@
 /*global require,describe,beforeEach,it,assert*/
-describe('WebpackageDocument Schema Validation (modelVersion 8.3.0)', function () {
+describe('WebpackageDocument Schema Validation (modelVersion 8.3.1)', function () {
   var WebpackageDocument;
   var fs;
   var path;
@@ -13,9 +13,8 @@ describe('WebpackageDocument Schema Validation (modelVersion 8.3.0)', function (
     describe('validation of repeatedValues', function () {
       var manifestWebpackageString;
       beforeEach(function () {
-        var pathName = path.resolve(__dirname, '../../resource/modelVersion-8.3.0/manifest.webpackage');
-        manifestWebpackageString =
-          fs.readFileSync(pathName, 'utf8');
+        var pathName = path.resolve(__dirname, '../../resource/modelVersion-8.3.1/manifest.webpackage');
+        manifestWebpackageString = fs.readFileSync(pathName, 'utf8');
       });
 
       it('should be validated successfully', function () {

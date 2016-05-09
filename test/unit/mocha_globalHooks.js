@@ -1,6 +1,8 @@
-/* globals before */
-'use strict'
+/* globals before*/
+'use strict';
+
 before(function (done) {
-  require('chai').should()
-  done()
-})
+  require('chai').should();
+  global.assert = require('assert');
+  done();
+});

@@ -1,13 +1,13 @@
-'use strict'
+'use strict';
 module.exports = function (grunt) {
   // measures the time each task takes
-  require('time-grunt')(grunt)
+  require('time-grunt')(grunt);
 
   // Load the plugin that provides tasks.
-  require('load-grunt-tasks')(grunt)
+  require('load-grunt-tasks')(grunt);
 
   // Load all custom tasks
-  grunt.loadTasks('tasks')
+  // grunt.loadTasks('tasks');
 
   // Load grunt configurations
   var options = {
@@ -27,22 +27,22 @@ module.exports = function (grunt) {
         command: 'npm test'
       }
     }
-  }
+  };
   // Define the configuration for all the tasks
-  grunt.initConfig(options)
+  grunt.initConfig(options);
 
   // Default server test task.
   grunt.registerTask('default', [
     'githooks'
-  ])
+  ]);
 
   // Default client test task.
   grunt.registerTask('test', [
     'shell:eslint', 'shell:test'
-  ])
+  ]);
 
   // generate docs
   grunt.registerTask('docs', [
     'shell:docs'
-  ])
-}
+  ]);
+};

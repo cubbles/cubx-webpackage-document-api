@@ -1,2 +1,3 @@
-test/unit
+test/unit/
 --recursive
+--globals expect
