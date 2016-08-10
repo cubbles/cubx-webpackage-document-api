@@ -2,7 +2,7 @@
     "name": "my-webpackage",
     "groupId": "org.example",
     "version": "0.2.0",
-    "modelVersion": "8.3.1",
+    "modelVersion": "9.0.0",
     "docType": "webpackage",
     "author": {
         "name": "John Doe",
@@ -76,7 +76,7 @@
                     },
                     {
                         "slotId": "slot3",
-                        "type": "function",
+                        "type": "string",
                         "value": "function(x, y) {return x + y}"
                     }
                 ],
@@ -175,7 +175,7 @@
                     },
                     {
                         "slotId": "slot13",
-                        "type": "function",
+                        "type": "string",
                         "value": "function(x, y) {return x + y}"
                     }
                 ],
