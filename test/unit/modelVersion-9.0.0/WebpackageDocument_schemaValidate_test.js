@@ -10,7 +10,7 @@ describe('WebpackageDocument Schema Validation (modelVersion 9.0.0)', function (
       WebpackageDocument = require('../../../lib/WebpackageDocument');
     });
 
-    describe('validation of repeatedValues', function () {
+    describe('validation for resource and deendencies as direct properties', function () {
       var manifestWebpackageString;
       beforeEach(function () {
         var pathName = path.resolve(__dirname, '../../resource/modelVersion-9.0.0/manifest.webpackage');
