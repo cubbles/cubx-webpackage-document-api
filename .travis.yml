@@ -10,6 +10,9 @@ script:
 
 notifications:
   email:
-    - jtrs@incowia.com
-    - pwr@incowia.com
-    - hrbu@incowia.com
+    recipients:
+      - jtrs@incowia.com
+      - pwr@incowia.com
+      - hrbu@incowia.com
+    on_success: change
+    on_failure: always
