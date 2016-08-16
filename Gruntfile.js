@@ -40,6 +40,10 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'shell:eslint', 'shell:test'
   ]);
+  // Default client test task.
+  grunt.registerTask('validateSources', [
+    'shell:eslint'
+  ]);
 
   // generate docs
   grunt.registerTask('docs', [

@@ -1,5 +1,5 @@
 /*global require,describe,beforeEach,it,assert*/
-describe('WebpackageDocument Schema Validation (modelVersion 9.0.0) (not valid schema)', function () {
+describe('WebpackageDocument Schema Validation (modelVersion 9.1.0) (not uniq dependencies schema)', function () {
   var WebpackageDocument;
   var fs;
   var path;
@@ -13,7 +13,7 @@ describe('WebpackageDocument Schema Validation (modelVersion 9.0.0) (not valid s
     describe('validation for resource and deendencies as direct properties', function () {
       var manifestWebpackageString;
       beforeEach(function () {
-        var pathName = path.resolve(__dirname, '../../resource/modelVersion-9.0.0/manifest_error.webpackage');
+        var pathName = path.resolve(__dirname, '../../resource/modelVersion-9.1.0/manifest_error_deps.webpackage');
         manifestWebpackageString = fs.readFileSync(pathName, 'utf8');
       });
 
@@ -25,20 +25,14 @@ describe('WebpackageDocument Schema Validation (modelVersion 9.0.0) (not valid s
           validationState = true;
         };
         var onUnsupportedModelVersionError = function (error) {
-          console.log(error);
-          assert.fail(error, null, 'No error not expected.');
+          console.log('error', error);
+          assert.fail(error, null, 'No error expected.');
         };
         var onValidationError = function (errors) {
           validationState = false;
           console.log('errors', errors);
-          errors[ 0 ].should.have.property('message', 'Missing required property: resources');
-          errors[ 0 ].should.have.property('dataPath', '/artifacts/compoundComponents/0');
-          errors[ 1 ].should.have.property('message', 'Additional properties not allowed');
-          errors[ 1 ].should.have.property('dataPath', '/artifacts/compoundComponents/0/endpoints');
-          errors[ 2 ].should.have.property('message', 'Missing required property: resources');
-          errors[ 2 ].should.have.property('dataPath', '/artifacts/elementaryComponents/0');
-          errors[ 3 ].should.have.property('message', 'Additional properties not allowed');
-          errors[ 3 ].should.have.property('dataPath', '/artifacts/elementaryComponents/0/endpoints');
+          errors.should.have.length(1);
+          errors[0].should.be.equal('RuleViolation identified: Artifact \'my-compound\' contains multiple references to dependency \'{"webpackageId":"com.hm.demos.aviator@1.0","artifactId":"component1"}\'');
         };
         webpackageDocument.validate(onSuccess, onUnsupportedModelVersionError, onValidationError);
         validationState.should.be.equal(false);

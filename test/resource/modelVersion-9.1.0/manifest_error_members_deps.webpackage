@@ -1,0 +1,344 @@
+{
+    "name": "my-webpackage",
+    "groupId": "org.example",
+    "version": "0.2.0",
+    "modelVersion": "9.1.0",
+    "docType": "webpackage",
+    "author": {
+        "name": "John Doe",
+        "email": "john.doe@example.org"
+    },
+    "license": "MIT",
+    "homepage": "http://project.home.com",
+    "keywords": [
+        "cubx",
+        "template"
+    ],
+    "man": [
+        "http://project.com/man",
+        "http://project.com/man2"
+    ],
+    "runnables": [
+        {
+            "name": "readme",
+            "path": "/doc/readme.html",
+            "description": "Read this ..."
+        }
+    ],
+    "artifacts": {
+        "apps": [
+            {
+                "artifactId": "my-app",
+                "description": "This app demonstrates ...",
+                "runnables": [
+                    {
+                        "name": "my-app-readme",
+                        "path": "/doc/readme.html",
+                        "description": "Read this ..."
+                    }
+                ],
+                "dependencies": [
+                    {
+                        "artifactId": "my-compound"
+                    },
+                    {
+                        "webpackageId": "com.incowia.cubx-webpackage-viewer@1.2.0",
+                        "artifactId": "cubx-component-docs-viewer",
+                        "endpointId": "main"
+                    }
+                ]
+
+            }
+        ],
+        "compoundComponents": [
+            {
+                "artifactId": "my-compound",
+                "description": "This compound demonstrates ...",
+                "resources": [
+                    "import.html"
+                ],
+                "dependencies": [
+                    {
+                        "artifactId": "bar-chart"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component1"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component2"
+                    },
+                    {
+                        "webpackageId": "com.incowia.basic-html-components@0.1.0-SNAPSHOT",
+                        "artifactId": "cubx-date-input",
+                        "endpointId": "main"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.1",
+                        "artifactId": "component-2"
+                    }
+                ],
+                "dependencyExcludes": [
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component-2"
+                    }
+                ],
+                "slots": [
+                    {
+                        "slotId": "testSlot1",
+                        "type": "number",
+                         "direction": [
+                            "input"
+                        ],
+                        "description": "This slot ..."
+                    },
+                    {
+                        "slotId": "slot2",
+                        "type": "number",
+                        "direction": [
+                            "input",
+                            "output"
+                        ]
+                    },
+                    {
+                        "slotId": "slot3",
+                        "type": "string",
+                        "value": "function(x, y) {return x + y}"
+                    }
+                ],
+                "members": [
+                    {
+                        "memberId": "vehiclesPerChargingstationCorrelator",
+                        "artifactId": "generic",
+                        "displayName": "Korrelation - Fahrzeuge pro Ladestation",
+                        "description": "This member is used ..."
+                    },
+                    {
+                        "memberId": "vehiclePerSharingstationCorrelator",
+                        "artifactId": "generic",
+                        "displayName": "Korrelation - Fahrzeuge pro Carsharing-Station"
+                    },
+                    {
+                        "memberId": "stationView",
+                        "artifactId": "station-view",
+                        "displayName": "Korrelation - Fahrzeuge pro Carsharing-Station"
+                    }
+                ],
+                "connections": [
+                    {
+                        "connectionId": "chargeStationCorrelator:testInput-out1",
+                        "source": {
+                            "memberIdRef": "vehiclesPerChargingstationCorrelator",
+                            "slot": "correlationValueOut"
+                        },
+                        "destination": {
+                            "memberIdRef": "stationView",
+                            "slot": "correlationValuesIn"
+                        },
+                        "copyValue": false,
+                        "description": "charging station correlator view adapter"
+                    },
+                    {
+                        "connectionId": "shareStationCorrelator:testInput-out1",
+                        "source": {
+                            "memberIdRef": "vehiclePerSharingstationCorrelator",
+                            "slot": "correlationValueOut"
+                        },
+                        "destination": {
+                            "memberIdRef": "stationView",
+                            "slot": "correlationValuesIn"
+                        },
+                        "repeatedValues": true,
+                        "description": "sharing station correlator view adapter"
+                    },
+                    {
+                        "connectionId": "xxx",
+                        "source": {
+                            "memberIdRef": "vehiclePerSharingstationCorrelator",
+                            "slot": "correlationValueOut"
+                        },
+                        "destination": {
+                            "memberIdRef": "stationView",
+                            "slot": "correlationValuesIn"
+                        },
+                        "repeatedValues": false,
+                        "description": "sharing station correlator view adapter"
+                    }
+                ],
+                "inits": [
+                    {
+                        "memberIdRef": "vehiclesPerChargingstationCorrelator",
+                        "slot": "correlationValueIn",
+                        "value": "12"
+                    },
+                    {
+                        "memberIdRef": "vehiclesPerChargingstationCorrelator",
+                        "slot": "unit",
+                        "value": "sq km"
+                    }
+                ]
+            }
+        ],
+        "elementaryComponents": [
+            {
+                "artifactId": "my-elementary",
+                "description": "This elementary demonstrates ...",
+                "resources": [
+                    "import.html"
+                ],
+                "dependencies": [
+                    {
+                        "webpackageId": "d3-charts-lib@1.0",
+                        "artifactId": "bar-chart",
+                        "endpointId": "asdeasd"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component-1"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component-2"
+                    },
+                    {
+                        "artifactId": "my-util1"
+                    }
+                ],
+                "slots": [
+                    {
+                        "slotId": "testSlot1",
+                        "type": "number",
+                        "direction": [
+                            "input"
+                        ]
+                    },
+                    {
+                        "slotId": "slot2",
+                        "type": "number",
+                        "direction": [
+                            "input",
+                            "output"
+                        ]
+                    },
+                    {
+                        "slotId": "slot13",
+                        "type": "string",
+                        "value": "function(x, y) {return x + y}"
+                    }
+                ]
+            },
+            {
+                "artifactId": "my-elementary-2",
+                "description": "This elementary demonstrates ...",
+                "resources": [
+                    "import.html"
+                ],
+                "dependencies": [
+                    {
+                        "webpackageId": "d3-charts-lib@1.0",
+                        "artifactId": "bar-chart",
+                        "endpointId": "asdeasd"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component-1"
+                    },
+                    {
+                        "webpackageId": "com.hm.demos.aviator@1.0",
+                        "artifactId": "component-2"
+                    },
+                    {
+                        "artifactId": "my-util1"
+                    }
+                ],
+                "dependencyExcludes": [
+                    {
+                        "webpackageId": "d3-charts-lib@1.0",
+                        "artifactId": "bar-chart",
+                        "endpointId": "main"
+                    }
+                ],
+                "slots": [
+                    {
+                        "slotId": "testSlot1",
+                        "type": "number",
+                        "direction": [
+                            "input"
+                        ]
+                    },
+                    {
+                        "slotId": "slot2",
+                        "type": "number",
+                        "direction": [
+                            "input",
+                            "output"
+                        ]
+                    },
+                    {
+                        "slotId": "slot13",
+                        "type": "string",
+                        "value": "function(x, y) {return x + y}"
+                    }
+                ]
+            }
+        ],
+        "utilities": [
+            {
+                "artifactId": "my-util1",
+                "description": "This util demonstrates ...",
+                "resources": [
+                    "import.html"
+                ],
+                "dependencies": [
+                    {
+                        "webpackageId": "d3-charts-lib@1.0",
+                        "artifactId": "bar-chart"
+                    },
+                    {
+                        "webpackageId": "jquery2.1.0@1.0",
+                        "artifactId": "jquery"
+                    }
+                ],
+                "dependencyExcludes": [
+                    {
+                        "webpackageId": "jquery2.0.0@1.0",
+                        "artifactId": "jquery"
+                    }
+                ]
+            },
+            {
+                "artifactId": "my-util2-main",
+                "description": "This util demonstrates ...",
+                "resources": [
+                    "import.html"
+                ],
+                "dependencies": [
+                    {
+                        "webpackageId": "d3-charts-lib@1.0",
+                        "artifactId": "bar-chart"
+                    }
+                ]
+            },
+            {
+                "artifactId": "my-util3-min",
+                "description": "This util demonstrates ...",
+                "resources": [
+                    {
+                        "prod": "import.min.html",
+                        "dev": "import.html"
+                    }
+                ],
+                "dependencies": [
+                    {
+                        "webpackageId": "d3-charts-lib@0.9",
+                        "artifactId": "bar-chart",
+                        "endpointId": "main"
+                    }
+                ]
+            }
+        ]
+    }
+}
+

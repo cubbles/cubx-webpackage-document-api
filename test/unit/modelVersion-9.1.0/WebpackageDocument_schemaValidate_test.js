@@ -1,5 +1,5 @@
 /*global require,describe,beforeEach,it,assert*/
-describe('WebpackageDocument Schema Validation (modelVersion 9.0.0)', function () {
+describe('WebpackageDocument Schema Validation (modelVersion 9.1.0)', function () {
   var WebpackageDocument;
   var fs;
   var path;
@@ -13,7 +13,7 @@ describe('WebpackageDocument Schema Validation (modelVersion 9.0.0)', function (
     describe('validation for resource and deendencies as direct properties', function () {
       var manifestWebpackageString;
       beforeEach(function () {
-        var pathName = path.resolve(__dirname, '../../resource/modelVersion-9.0.0/manifest.webpackage');
+        var pathName = path.resolve(__dirname, '../../resource/modelVersion-9.1.0/manifest.webpackage');
         manifestWebpackageString = fs.readFileSync(pathName, 'utf8');
       });
 
@@ -25,12 +25,12 @@ describe('WebpackageDocument Schema Validation (modelVersion 9.0.0)', function (
           validationState = true;
         };
         var onUnsupportedModelVersionError = function (error) {
-          console.log(error);
-          assert.fail(error, null, 'No error not expected.');
+          console.log('error', error);
+          assert.fail(error, null, 'No error expected.');
         };
         var onValidationError = function (errors) {
           console.log(errors);
-          assert.fail(errors, null, 'No error not expected.');
+          assert.fail(errors, null, 'No error expected.');
         };
         webpackageDocument.validate(onSuccess, onUnsupportedModelVersionError, onValidationError);
         validationState.should.be.equal(true);
