@@ -318,6 +318,15 @@
                         "value": "sq km"
                     }
                 ]
+            },
+            {
+                "artifactId": "my-compound-3",
+                "description": "This compound demonstrates ...",
+                "resources": [
+                    "import.html"
+                ],
+                "members": [],
+                "connections": []
             }
         ],
         "elementaryComponents": [
