@@ -21,5 +21,9 @@ webpackageApi.setManifestComponent(webbleManifest);
 var couchDocument = webpackageApi.getWebpackageDocument();
 ```
 
+Issues: https://cubbles.atlassian.net/projects/CDT/issues
+
+Docs https://cubbles.atlassian.net/wiki/display/CDT
+
 [npm-image]: https://img.shields.io/npm/v/cubx-webpackage-document-api.svg?style=flat
 [npm-url]: https://npmjs.org/package/cubx-webpackage-document-api
