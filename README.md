@@ -2,6 +2,8 @@
 
 [![npm][npm-image]][npm-url]
 
+[![Build Status](https://travis-ci.org/cubbles/cubx-webpackage-document-api.svg?branch=master)](https://travis-ci.org/cubbles/cubx-webpackage-document-api.svg?branch=master)
+
 This lib is part of the Cubbles platform. I provides an api for a webpackage document, e.g. with a method for validation.
 
 ## Install
