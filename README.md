@@ -23,7 +23,7 @@ webpackageApi.setManifestComponent(webbleManifest);
 var couchDocument = webpackageApi.getWebpackageDocument();
 ```
 
-Issues: https://cubbles.atlassian.net/projects/CDT/issues
+Issues: https://github.com/cubbles/cubx-webpackage-document-api/issues
 
 Docs https://cubbles.atlassian.net/wiki/display/CDT
 
