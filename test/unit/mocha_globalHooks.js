@@ -1,4 +1,4 @@
-/* globals before*/
+/* globals before */
 'use strict';
 
 before(function (done) {

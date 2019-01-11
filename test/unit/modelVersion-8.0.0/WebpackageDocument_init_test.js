@@ -1,4 +1,4 @@
-/*global require,describe,beforeEach,it*/
+/* global require,describe,beforeEach,it */
 var expect = require('chai').expect;
 describe('WebpackageDocument Initialization (modelVersion 8.0.0)', function () {
   var WebpackageDocument;
@@ -135,7 +135,7 @@ describe('WebpackageDocument Initialization (modelVersion 8.0.0)', function () {
       it('Attribute is available  on Object', function () {
         webpackageDocument.document.should.have.property('test1');
         webpackageDocument.document.should.have.property('test2');
-        webpackageDocument.document.should.have.deep.property('test2.test3', true);
+        webpackageDocument.document.should.have.nested.property('test2.test3', true);
       });
     });
   });

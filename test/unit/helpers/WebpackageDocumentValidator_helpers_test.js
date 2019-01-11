@@ -1,4 +1,4 @@
-/*global require,describe,before,it,expect,beforeEach,afterEach, sinon*/
+/* global require,describe,before,it,expect,beforeEach,afterEach, sinon */
 describe('WebpackageDocumentValidator (helpers)', function () {
   var WebpackageDocumentValidator;
   before(function () {

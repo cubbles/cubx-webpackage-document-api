@@ -1,4 +1,4 @@
-/*global require,describe,beforeEach,it,assert*/
+/* global require,describe,beforeEach,it,assert */
 describe('WebpackageDocument Schema Validation 4 Property Values (modelVersion 8.0.0)', function () {
   var WebpackageDocument;
   var fs;

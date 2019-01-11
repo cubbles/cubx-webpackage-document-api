@@ -1,4 +1,4 @@
-/*global require,describe,beforeEach,it,assert*/
+/* global require,describe,beforeEach,it,assert */
 describe('WebpackageDocument Schema Validation (modelVersion 8.3.0)', function () {
   var WebpackageDocument;
   var fs;

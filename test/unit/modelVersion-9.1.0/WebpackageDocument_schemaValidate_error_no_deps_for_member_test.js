@@ -1,4 +1,4 @@
-/*global require,describe,beforeEach,it,assert*/
+/* global require,describe,beforeEach,it,assert */
 describe('WebpackageDocument Schema Validation (modelVersion 9.1.0) (missing dependencies for members)', function () {
   var WebpackageDocument;
   var fs;

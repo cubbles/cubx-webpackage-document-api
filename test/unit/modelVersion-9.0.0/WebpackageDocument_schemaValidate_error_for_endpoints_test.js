@@ -1,4 +1,4 @@
-/*global require,describe,beforeEach,it,assert*/
+/* global require,describe,beforeEach,it,assert */
 describe('WebpackageDocument Schema Validation (modelVersion 9.0.0) (not valid schema)', function () {
   var WebpackageDocument;
   var fs;
